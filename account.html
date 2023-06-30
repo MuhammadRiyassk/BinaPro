@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Balance</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            border-radius: 4px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        strong {
+            font-size: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            .card-title {
+                font-size: 18px;
+            }
+
+            strong {
+                font-size: 18px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>DEPOSIT/WITHDRAW ORDERS</h1>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title"></div>
+                <p><strong>Asset: $288</strong></p>
+                <p><strong>Capital: $3,750</strong></p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h2>Transaction History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Withdrew</td>
+                            <td>$300</td>
+                            <td>Completed</td>
+                            <td>2023-6-25 21:27</td>
+                        </tr>
+                        <tr>
+                            <td>Withdrew</td>
+                            <td>$968</td>
+                            <td>Completed</td>
+                            <td>2023-06-22 22:17</td>
+                        </tr>
+                        <tr>
+                            <td>Deposit</td>
+                            <td>$3,750</td>
+                            <td>Completed</td>
+                            <td>2023-05-25 19:25</td>
+                        </tr>
+                        <tr>
+                            <td>Deposit</td>
+                            <td>$1,250</td>
+                            <td>Completed</td>
+                            <td>2023-05-24 18:45</td>
+                        </tr>
+                        <tr>
+                            <td>Deposit</td>
+                            <td>$1,250</td>
+                            <td>Completed</td>
+                            <td>2023-05-22 19:07</td>
+                        </tr>
+                        <tr>
+                            <td>Deposit</td>
+                            <td>$1,250</td>
+                            <td>Completed</td>
+                            <td>2023-05-18 19:35</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <a href="deposit.html"><button class="btn btn-dark">Deposit</button></a>
+                    <a href="withdraw.html"><button class="btn btn-dark">Withdraw</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

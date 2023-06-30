@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Add responsive styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group select,
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-group .wallet-address {
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        .deposit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .deposit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Deposit</h1>
+        <form>
+            <div class="form-group">
+                <select id="coin-select" name="coin" onchange="updateWalletAddress()">
+                    <option value="bitcoin">USDT-TRC20</option>
+                    <option value="ethereum">USDT-ERC20</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="coin-selection">Coin Selection:</label>
+                <select id="coin-selection" onchange="updateWalletAddress()">
+                    <option value="btc">Bitcoin (BTC)</option>
+                    <option value="eth">Ethereum (ETH)</option>
+                    <option value="ltc">Litecoin (LTC)</option>
+                    <!-- Add more coin options here -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="wallet-address">Wallet Address:</label>
+                <label id="wallet-address" class="wallet-address"></label>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function updateWalletAddress() {
+            var coinSelect = document.getElementById("coin-select");
+            var coinSelection = document.getElementById("coin-selection");
+            var walletAddressLabel = document.getElementById("wallet-address");
+
+            var coin = coinSelect.value;
+            var coinSelectionValue = coinSelection.value;
+            var walletAddress = getWalletAddress(coin, coinSelectionValue);
+
+            walletAddressLabel.textContent = walletAddress;
+        }
+
+        function getWalletAddress(coin, coinSelectionValue) {
+            if (coin === "bitcoin") {
+                if (coinSelectionValue === "btc") {
+                    return "TArpYTgvmwj2Q8pURYnwZckjqf1XwUD2d4";
+                } else if (coinSelectionValue === "eth") {
+                    return "jqf1XwUDj2Q8pURYnwZck2d4TArpYTgvmw";
+                } else if (coinSelectionValue === "ltc") {
+                    return "8pURYnwZck2d4TArpYTgvmwjqf1XwUDj2Q";
+                }
+                // Add more coin addresses here
+            } else if (coin === "ethereum") {
+                if (coinSelectionValue === "btc") {
+                    return "Bitcoin (BTC) Wallet Address for Ethereum";
+                } else if (coinSelectionValue === "eth") {
+                    return "Ethereum (ETH) Wallet Address";
+                } else if (coinSelectionValue === "ltc") {
+                    return "Litecoin (LTC) Wallet Address for Ethereum";
+                }
+                // Add more coin addresses here
+            }
+
+            return ""; // Return an empty string if no matching address is found
+        }
+
+        // Initialize wallet address on page load
+        updateWalletAddress();
+    </script>
+</body>
+
+</html>
