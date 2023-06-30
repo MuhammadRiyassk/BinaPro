@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Buy & Sell</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .chart {
+            height: 380px;
+            background-color: #333;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #555;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #price-dropdown {
+            margin-bottom: 10px;
+            width: 410px;
+        }
+
+        .buy-section {
+            background-color: #181818;
+            border-radius: 8px;
+            margin: 0;
+            text-align: center;
+            margin-top: 115px;
+        }
+
+        #buy-amount {
+            width: 400px;
+
+        }
+
+        .sell-section {
+
+            background-color: #181818;
+            border-radius: 8px;
+            margin: 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>SME</h1>
+            <!-- <select id="coin-dropdown">
+      <option value="btc">Bitcoin</option>
+      <option value="eth">Ethereum</option>
+      <option value="ltc">Litecoin</option>
+     
+    </select>-->
+            <!-- Add more options for different coins -->
+
+            <div class="chart">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div id="tradingview_9ddc9"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/"
+                            rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                        new TradingView.widget(
+                            {
+                                "width" : 940,
+                                "height" : 500,
+                                "symbol": "ICESG:SME1!",
+                                "interval": "1",
+                                "timezone": "Etc/UTC",
+                                "theme": "dark",
+                                "style": "1",
+                                "locale": "en",
+                                "toolbar_bg": "#f1f3f6",
+                                "enable_publishing": false,
+                                "withdateranges": true,
+                                "hide_side_toolbar": false,
+                                "allow_symbol_change": true,
+                                "details": true,
+                                "hotlist": true,
+                                "calendar": true,
+                                "container_id": "tradingview_9ddc9"
+                            }
+                        );
+                    </script>
+                </div>
+                <!-- TradingView Widget END -->
+            </div>
+
+            <div class="buy-section">
+                <div class="title">Buy SME</div>
+                <label for="price">Price:</label>
+                <div style="align-items: center;">
+                    <select name="" id="price-dropdown">
+                        <option value="limited">Limited</option>
+                        <option value="market">Market</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="buy-amount">Amount:</label>
+                    <input type="number" id="buy-amount" class="buy-input" placeholder="Enter amount">
+                </div>
+                <button id="buy-button" onclick="succesmessage()">Buy</button>
+            </div>
+
+
+            <script>
+                function succesmessage() {
+                    alert("Operation Success")
+                }
+            </script>
+
+
+            <div class="sell-section">
+                <div class="title">Sell SME</div>
+                <label for="price">Price:</label>
+                <div style="align-items: center;">
+                    <select name="" id="price-dropdown">
+                        <option value="limited">Limited</option>
+                        <option value="market">Market</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="buy-amount">Amount:</label>
+                    <input type="number" id="buy-amount" class="buy-input" placeholder="Enter amount">
+                </div>
+                <button id="buy-button" onclick="succesmessage()">Sell</button>
+            </div>
+
+
+        </div>
+
+        <script>
+    // Add your JavaScript code here
+        </script>
+</body>
+
+</html>
